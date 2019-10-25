@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Thanks
 
-[Analog Watch Alarm](http://soundbible.com/2197-Analog-Watch-Alarm.html), which [license can be found here](https://creativecommons.org/licenses/by/3.0/).
-[Digital 7 Regular Font](https://www.1001fonts.com/digital-7-font.html), used for displaying the numbers.
-[Free Code Camp](https://freecodecamp.org/), for helping people on their developer careers.
+- [Analog Watch Alarm](http://soundbible.com/2197-Analog-Watch-Alarm.html), which [license can be found here](https://creativecommons.org/licenses/by/3.0/).
+- [Digital 7 Regular Font](https://www.1001fonts.com/digital-7-font.html), used for displaying the numbers.
+- [Free Code Camp](https://freecodecamp.org/), for helping people on their developer careers.
 
 ## Links
 

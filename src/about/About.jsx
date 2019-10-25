@@ -21,6 +21,12 @@ export class About extends React.Component {
           </a>
           .
         </p>
+        <p>
+          The source code of this app can be found{' '}
+          <a href="https://github.com/skaparate/fcc-pomodoro-clock-react">
+            clicking here
+          </a>.
+        </p>
         <h3>Thanks</h3>
         <ul>
           <li>

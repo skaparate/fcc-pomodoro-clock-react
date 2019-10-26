@@ -1,7 +1,11 @@
 import accurateInterval from 'accurate-interval';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Clock.css';
+
+import { BreakControls } from './BreakControls';
+import { SessionControls } from './SessionControls';
+import { ClockControls } from './ClockControls';
+import { ClockDisplay } from './ClockDisplay';
 
 export class Clock extends React.Component {
   constructor(props) {
@@ -64,7 +68,6 @@ export class Clock extends React.Component {
     if (this.state.breakLength < 60) {
       const breakLength = this.state.breakLength + 1;
       this.setState({
-        minutes: this.updateMinutes(breakLength),
         breakLength,
       });
     }
@@ -77,7 +80,6 @@ export class Clock extends React.Component {
     if (this.state.breakLength > 1) {
       const breakLength = this.state.breakLength - 1;
       this.setState({
-        minutes: this.updateMinutes(breakLength),
         breakLength,
       });
     }
@@ -193,8 +195,6 @@ export class Clock extends React.Component {
     }
   }
 
-  endTick() {}
-
   formatValue(value) {
     return value.toString().padStart(2, '0');
   }
@@ -216,62 +216,20 @@ export class Clock extends React.Component {
   render() {
     return (
       <div className="pomodoro-clock clearfix">
-        <div className="break float-left">
-          <h4 id="break-label" className="label">
-            Break Length
-          </h4>
-          <div className="flex-centered">
-            <button
-              id="break-decrement"
-              className="break-decrement decrement"
-              onClick={this.onBreakDecrease}
-            >
-              <FontAwesomeIcon icon="minus"></FontAwesomeIcon>
-            </button>
-            <div id="break-length" className="break-label label-number">
-              {this.state.breakLength}
-            </div>
-            <button
-              id="break-increment"
-              className="break-increment increment"
-              onClick={this.onBreakIncrease}
-            >
-              <FontAwesomeIcon icon="plus"></FontAwesomeIcon>
-            </button>
-          </div>
-        </div>
-        {/* .break */}
+        <BreakControls
+          onBreakDecrease={this.onBreakDecrease}
+          onBreakIncrease={this.onBreakIncrease}
+          breakLength={this.state.breakLength}
+          className="float-left"
+        />
 
         <div className="clock float-left">
-          <h2
-            id="timer-label"
-            className={`clock-label ${this.state.displayClasses}`}
-          >
-            {this.state.isSession ? 'Session' : 'Break'}
-          </h2>
-          <h3
-            id="time-left"
-            className={`clock-display ${this.state.displayClasses}`}
-          >
-            {this.display}
-          </h3>
-          <button
-            id="start_stop"
-            className="clock-start clock-button"
-            title="Start / Pause"
-            onClick={this.onStartClick}
-          >
-            <FontAwesomeIcon icon="play"></FontAwesomeIcon>
-            <FontAwesomeIcon icon="pause"></FontAwesomeIcon>
-          </button>
-          <button
-            id="reset"
-            className="clock-reset clock-button"
-            title="Reset"
-            onClick={this.onReset}
-          >
-            <FontAwesomeIcon icon="redo-alt"></FontAwesomeIcon>
-          </button>
+          <ClockDisplay
+            displayClasses={this.state.displayClasses}
+            isSession={this.state.isSession}
+            display={this.display}
+          />
+          <ClockControls onStart={this.onStartClick} onReset={this.onReset} />
           <audio
             id="beep"
             src="analog-watch-alarm.mp3"
@@ -279,35 +237,12 @@ export class Clock extends React.Component {
           ></audio>
         </div>
         {/* .clock */}
-
-        <div className="session float-left">
-          <h4 id="session-label" className="session-label label">
-            Session Length
-          </h4>
-          <div className="flex-centered">
-            <button
-              id="session-decrement"
-              className="session-decrement decrement"
-              onClick={this.onSessionDecrease}
-            >
-              <FontAwesomeIcon icon="minus"></FontAwesomeIcon>
-            </button>
-            <div
-              id="session-length"
-              className="session-length-label label-number"
-            >
-              {this.state.sessionLength}
-            </div>
-            <button
-              id="session-increment"
-              className="session-increment increment"
-              onClick={this.onSessionIncrease}
-            >
-              <FontAwesomeIcon icon="plus"></FontAwesomeIcon>
-            </button>
-          </div>
-        </div>
-        {/* .session */}
+        <SessionControls
+          onSessionDecrease={this.onSessionDecrease}
+          onSessionIncrease={this.onSessionIncrease}
+          sessionLength={this.state.sessionLength}
+          className="float-left"
+        ></SessionControls>
       </div>
     );
   }

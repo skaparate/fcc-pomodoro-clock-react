@@ -11,7 +11,7 @@ library.add(fas);
 function App() {
   return (
     <div className="App">
-      <h1 class="text-center">The Pomodoro Clock</h1>
+      <h1 className="text-center">The Pomodoro Clock</h1>
       <Clock />
       <About />
     </div>

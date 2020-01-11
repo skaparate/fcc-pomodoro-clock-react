@@ -12,8 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Links
 
-[My Personal Website](https://nicomv.com/)
-[My Free Code Camp's Profile](https://freecodecamp.org/skaparate)
+- [My Personal Website](https://nicomv.com/)
+- [My Free Code Camp's Profile](https://freecodecamp.org/skaparate)
 
 ## Available Scripts
 

@@ -215,15 +215,15 @@ export class Clock extends React.Component {
 
   render() {
     return (
-      <div className="pomodoro-clock clearfix">
+      <div className="pomodoro-clock">
         <BreakControls
           onBreakDecrease={this.onBreakDecrease}
           onBreakIncrease={this.onBreakIncrease}
           breakLength={this.state.breakLength}
-          className="float-left"
+          className=""
         />
 
-        <div className="clock float-left">
+        <div className="clock">
           <ClockDisplay
             displayClasses={this.state.displayClasses}
             isSession={this.state.isSession}
@@ -241,7 +241,7 @@ export class Clock extends React.Component {
           onSessionDecrease={this.onSessionDecrease}
           onSessionIncrease={this.onSessionIncrease}
           sessionLength={this.state.sessionLength}
-          className="float-left"
+          className=""
         ></SessionControls>
       </div>
     );

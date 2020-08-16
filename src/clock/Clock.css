@@ -3,6 +3,8 @@
   width: 450px;
   margin: 0 auto;
   padding: 30px 30px 40px 30px;
+  display: flex;
+  align-items: center;
 }
 
 .increment,
@@ -13,6 +15,7 @@
   background-color: #403233;
   padding: 1rem;
 }
+
 .increment:hover,
 .increment :focus,
 .decrement:hover,
@@ -35,29 +38,39 @@
 }
 
 .label-number {
-  font-family: 'Digital 7 Regular';
+  font-family: "Digital 7 Regular";
   font-size: 1.5rem;
 }
 
 .clock {
   text-align: center;
+  background-color: azure;
+  padding: 10px;
 }
 
 .clock-display {
-  font-family: 'Digital 7 Regular';
+  font-family: "Digital 7 Regular";
   font-size: 2rem;
+  color: white;
+  background-color: #403233;
+  padding: 5px 0 10px 0;
 }
 
-@media screen and (max-width: 500px) {
+.clock-start {
+  display: flex;
+}
+
+.clock-reset .svg-inline--fa {
+  display: block;
+}
+
+@media screen and (max-width: 520px) {
   .pomodoro-clock {
     width: auto;
+    flex-direction: column;
   }
 
-  .float-left {
-    float: none;
-  }
-
-  .float-right {
-    float: none;
+  .clock {
+    margin: 20px 0 10px 0;
   }
 }

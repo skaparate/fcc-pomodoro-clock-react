@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export class ClockControls extends React.Component {
   render() {
     return (
-      <div className="clock-controls">
+      <div className="clock-controls flex-centered">
         <button
           id="start_stop"
           className="clock-start clock-button"
